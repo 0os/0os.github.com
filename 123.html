@@ -148,6 +148,7 @@
                 url += fields[i] + '=' + t.value + "&";
             }
             window.location.href = url;
+	    window.location.reload(true)
         }
         function refresh(){
             window.location.href = window.location.href.split('#')[0];
