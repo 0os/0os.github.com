@@ -28,7 +28,7 @@
            
         }
         function getParameterByName(name) {
-            var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+            var match = RegExp('[#&]' + name + '=([^&]*)').exec(window.location);
             return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
         }
         Date.prototype.Format = function (fmt) {
@@ -142,7 +142,7 @@
         function generate(){
 
             var fields = ['name', 'car', 'seat', 'time', 'price'];
-            var url = window.location.href.split('?')[0] + '?'
+            var url = window.location.href.split('#')[0] + '#'
             for(var i = 0; i < fields.length ; i++){
                 var t = document.getElementById( fields[i] );
                 url += fields[i] + '=' + t.value + "&";
@@ -150,7 +150,7 @@
             window.location.href = url;
         }
         function refresh(){
-            window.location.href = window.location.href.split('?')[0];
+            window.location.href = window.location.href.split('#')[0];
         }
     </script>
 
