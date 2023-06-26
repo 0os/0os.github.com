@@ -86,7 +86,7 @@
 		var curTime = new Date();
 		var curTime1hLater = curTime.setHours( curTime.getHours() + 1 );
                 document.getElementById('canvas').hidden = true;
-                var fields = {'name':'*', 'car':'K1189', 'seat':'硬座 14车 021号', 'time':curTime1hLater.Format("yyyy-MM-dd HH:mm:ss"), 'price':'10元'};
+                var fields = {'name':'李*东', 'car':'K1189', 'seat':'硬座 14车 021号', 'time':curTime.Format("yyyy-MM-dd HH:mm"), 'price':'10元'};
                 for(key in fields){
                     document.getElementById(key).value = fields[key] ;
                 }
