@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width">
+    <title>Flip Example Preset</title>
+
+    <link rel="stylesheet" href="./flip/flip.min.css">
+
+</head>
+<body>
+
+<!-- START OF FLIP EXAMPLE PRESET -->
+
+<style>
+    .tick {
+        width: 80%;
+        margin: auto;
+        padding-bottom: 1em;
+        font-size:1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    }
+    
+    .tick-label {
+        font-size:.375em;
+        text-align:center;
+    }
+
+    .tick-group {
+        margin:0 .25em;
+        text-align:center;
+    }
+</style>
+
+<div class="tick"
+     data-did-init="handleTickInit">
+
+    <div data-repeat="true"
+         data-layout="horizontal center fit"
+         data-transform="preset(h, m, s)">
+
+        <div class="tick-group">
+
+            <div data-key="value"
+                 data-repeat="true"
+                 data-transform="pad(00) -> split">
+
+                <span data-view="flip"></span>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+	function handleTickInit(tick) {       
+		Tick.count.up('2023-06-29 8:00:00').onupdate = function(value) {
+            console.log(value);
+
+			tick.value = value.slice(1);
+        };
+
+	}
+</script>
+
+<!-- END OF FLIP EXAMPLE PRESET -->
+
+<script src="./flip/flip.min.js"></script>
+
+</body>
+</html>
